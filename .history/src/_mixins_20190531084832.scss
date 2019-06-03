@@ -1,0 +1,8 @@
+@mixin coverimg($url){
+    width: 100%;
+    height: 170px;
+    background-image: url($url);
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+}

@@ -1,0 +1,247 @@
+/* Font Roboto */
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+/* Clases */
+.container_max {
+  width: 96%;
+  margin: 0 auto;
+}
+
+/* Variables */
+
+/* Fonts */
+$font: "Roboto", sans-serif;
+/* Colors */
+$green: #84d020;
+$dark-grey: #6b6b6b;
+$lighter-grey: #6b6b6b;
+$background-color: #efefef;
+$darkness-grey: #3a3f3a;
+
+/* Selection */
+body {
+  background: $background-color;
+  margin: 0;
+  padding: 0;
+  *::selection {
+    background-color: rgba(93, 161, 50, 0.9);
+    color: white;
+  }
+}
+
+.principal-nav-desktop {
+  display: none;
+}
+/* Principal Nav Mobile */
+
+.principal-nav-mobile {
+  height: 50px;
+  background: white;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e2e2e2;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 5;
+  ul {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    li {
+      list-style: none;
+      flex: 1 1 auto;
+      display: flex;
+      justify-content: center;
+      &:nth-of-type(3) {
+        a {
+          &:first-child {
+            color: $dark-grey;
+          }
+        }
+      }
+
+      a {
+        color: $green;
+        display: inline-block;
+        padding: 10px 5px;
+        span {
+          font-size: 1.3rem;
+        }
+        img {
+          max-width: 160px;
+        }
+      }
+    }
+  }
+}
+
+/* Second Nav Mobile */
+.second-nav {
+  padding-top: 2.5rem;
+  .second-nav__breadcrupm {
+    ul {
+      padding-left: 1rem;
+      display: flex;
+      padding-left: 0px;
+      li {
+        list-style: none;
+        font-family: $font;
+        font-size: 0.8rem;
+        font-weight: 300;
+        &:nth-of-type(1) {
+          position: relative;
+          &:after {
+            font-family: "Font Awesome 5 Free";
+            content: "\f105";
+            display: inline-block;
+            font-size: 1rem;
+            color: $lighter-grey;
+            position: absolute;
+            font-weight: 900;
+            padding-left: 0.3rem;
+          }
+        }
+        &:nth-of-type(2) {
+          padding-left: 1rem;
+          color: $lighter-grey;
+        }
+        a {
+          text-decoration: none;
+          color: $green;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  /* Filter */
+  .second-nav__filter {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e2e2;
+    ul {
+      padding-left: 0px;
+      li {
+        list-style: none;
+        font-family: $font;
+        text-align: left;
+        border-bottom: 1px solid #efefef;
+        background: $green;
+        width: 100%;
+        height: 1.875rem;
+        a {
+          font-size: 0.9rem;
+          display: flex;
+          justify-content: space-between;
+          text-decoration: none;
+          color: white;
+          padding-left: 0.5rem;
+          padding: 7px 10px;
+          span {
+            padding-right: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+.wrapper-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-gap: 3rem;
+  .card {
+    background: white;
+    position: relative;
+    .card__image {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .card__discount-label {
+      color: #fff;
+      font-family: $font;
+      background: url("/src/flag.png") no-repeat 0 0 transparent;
+      background-size: 146px 88px;
+      width: 146px;
+      height: 74px;
+      padding: 14px 0 0 5px;
+      position: absolute;
+      top: 10px;
+      left: 0;
+      span {
+        &:nth-of-type(1) {
+          font-size: 0.9rem;
+          font-weight: 300;
+        }
+        p {
+          margin-top: 0px;
+          padding-bottom: 1rem;
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+      }
+    }
+    .card__content {
+      padding: 15px;
+      box-sizing: border-box;
+      .card__title {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        padding-bottom: 0.5rem;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        a {
+          text-decoration: none;
+          color: $darkness-grey;
+          font-family: $font;
+          font-weight: 500;
+          &:hover {
+            color: $green;
+          }
+        }
+      }
+      .card__description {
+        margin-top: 0px;
+        font-size: 0.8rem;
+        line-height: 1;
+        color: $lighter-grey;
+      }
+      .card__container-info-price {
+        display: flex;
+        justify-content: space-between;
+        .card__info-price {
+          small {
+            display: block;
+            color: $lighter-grey;
+            font-family: $font;
+            font-size: 0.6rem;
+          }
+          span {
+            a {
+              text-decoration: none;
+              color: $green;
+              font-size: $font;
+              font-size: 2.5rem;
+              font-weight: bold;
+              span{
+                  font-size: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 666px) {
+  .principal-nav-mobile {
+    display: none;
+  }
+  .principal-nav-desktop {
+    display: block;
+  }
+}

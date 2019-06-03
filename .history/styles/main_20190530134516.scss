@@ -1,0 +1,35 @@
+.principal-nav__desktop {
+  display: none;
+}
+.principal-nav__mobile {
+  ul {
+    display: flex;
+    width: 100%;
+    padding-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    li {
+      list-style: none;
+      flex: 1 1 auto;
+      display: flex;
+      justify-content: center;
+
+      a {
+        display: inline-block;
+        padding: 10px 5px;
+        img {
+          max-width: 160px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 666px) {
+  .principal-nav__mobile {
+    display: none;
+  }
+  .principal-nav__desktop {
+    display: block;
+  }
+}
